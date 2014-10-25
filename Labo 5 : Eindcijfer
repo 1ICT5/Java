@@ -1,0 +1,42 @@
+/*
+*Labo 5 : Eindcijfer
+*@author Jonas Bras
+*@version 25-10-2014
+*/
+
+public class Eindcijfer {
+
+	public static void main(String[] args) {
+		Eindcijfer cijfer = new Eindcijfer();
+		double t = cijfer.theorieCijfer();
+		double p = cijfer.examenCijfer();
+		double c = cijfer.eindResultaat( t , p);
+		cijfer.geefResultaat(c);
+	}
+
+	public double theorieCijfer() {
+		System.out.print( " Wat was je resultaat voor je theorie? (x/20) ");
+		double t = Input.readDouble();
+		return t;
+	}
+
+	public double examenCijfer() {
+		System.out.print( " Wat was je resultaat voor je practicum? (x/20) ");
+		double p = Input.readDouble();
+		return p;
+	}
+
+	public double eindResultaat (double t , double p) {
+		if ( p < t){
+			double c = p;
+			return c;
+		}else {
+			double c = (p+t)/2;
+			return c;
+		}
+	}
+
+	public void geefResultaat(double c) {
+		System.out.print ( " Uw resultaat is: " + c+"/20" );
+	}
+}
